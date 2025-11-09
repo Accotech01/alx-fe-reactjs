@@ -7,7 +7,9 @@ const Navbar = () => {
       backgroundColor: '#333',
       color: '#fff',
       padding: '10px',
-      textAlign: 'center'
+      textAlign: 'center',
+      display: 'flex',
+      justifyContent: 'right'
     }}>
       <Link to="/" style={{
         color: '#fff',
