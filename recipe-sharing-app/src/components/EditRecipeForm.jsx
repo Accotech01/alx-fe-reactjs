@@ -8,8 +8,8 @@ const EditRecipeForm = ({ recipeId }) => {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     updateRecipe(recipeId, { title, description });
   };
 
@@ -17,11 +17,11 @@ const EditRecipeForm = ({ recipeId }) => {
     <form onSubmit={handleSubmit}>
       <label>
         Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} />
       </label>
       <label>
         Description:
-        <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+        <textarea value={description} onChange={(event) => setDescription(event.target.value)} />
       </label>
       <button type="submit">Update Recipe</button>
     </form>
