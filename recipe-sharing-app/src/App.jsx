@@ -3,7 +3,7 @@ import AddRecipeForm from './components/AddRecipeForm'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
-import FavoriteList from './components/FavouriteList';
+import FavoriteList from './components/FavouritesLists';
 import RecommendationsList from './components/RecommendationsList';
 
 const App = () => {
