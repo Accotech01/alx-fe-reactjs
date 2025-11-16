@@ -16,7 +16,7 @@ const useRecipeStore = create((set) => ({
     recipes: state.recipes.map((recipe) => (recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe)),
     filteredRecipes: state.filteredRecipes.map((recipe) => (recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe)),
   })),
-  updateSearchTerm: (searchTerm) => set((state) => ({
+  setSearchTerm: (searchTerm) => set((state) => ({
     searchTerm,
     filteredRecipes: state.recipes.filter((recipe) => recipe.title.toLowerCase().includes(searchTerm.toLowerCase())),
   })),
