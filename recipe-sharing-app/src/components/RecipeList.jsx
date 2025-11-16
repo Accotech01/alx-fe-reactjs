@@ -1,15 +1,18 @@
   // RecipeList component
-  import useRecipeStore  from './recipeStore';
-  import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import useRecipeStore from './recipeStore';
+import SearchBar from './SearchBar';
 
-  const RecipeList = () => {
-    const recipes = useRecipeStore(state => state.recipes);
+const RecipeList = () => {
+  const { filteredRecipes, updateSearchTerm, searchTerm } = useRecipeStore();
 
-    return (
+  return (
     <div>
       <h1>Recipe List</h1>
+      <SearchBar />
       <ul>
-        {recipes.map((recipe) => (
+        {filteredRecipes.map((recipe) => (
           <li key={recipe.id}>
             <Link to={`/recipes/${recipe.id}`}>
               <h2>{recipe.title}</h2>
@@ -23,3 +26,4 @@
 };
 
 export default RecipeList;
+
