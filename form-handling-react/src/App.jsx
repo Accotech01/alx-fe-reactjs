@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import "./App.css"
 import RegistrationForm from './components/RegistrationForm'
-import FormikForm from './components/FormikForm'
+import formikForm from './components/FormikForm'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       <RegistrationForm />  
-      <FormikForm />
+      <formikForm />
     </>
   )
 }

@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "../App.css";
 
-const FormikForm = () => {
+const formikForm = () => {
   // Validation schema using Yup
   const validationSchema = Yup.object({
     username: Yup.string().required("Username is required"),
@@ -72,4 +72,4 @@ const FormikForm = () => {
   );
 };
 
-export default FormikForm;
+export default formikForm;
