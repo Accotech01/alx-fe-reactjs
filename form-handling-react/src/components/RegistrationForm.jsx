@@ -6,12 +6,9 @@ const RegistrationForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors({});
-    setSuccess("");
 
     const newErrors = {};
 
@@ -32,56 +29,50 @@ const RegistrationForm = () => {
       return;
     }
 
-    setSuccess("Registration successful!");
+    alert("Registration successful!");
 
     setUsername("");
     setEmail("");
     setPassword("");
+    setErrors({});
   };
 
   return (
-    <div className="form-container">
-      <form className="registration-form" onSubmit={handleSubmit}>
-        <h2>Create Account</h2>
+    <form className="registration-form" onSubmit={handleSubmit}>
+      <h2>Create Account</h2>
 
-        {success && <p className="success">{success}</p>}
+      <div className="form-group">
+        <label>Username</label>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        {errors.username && <p className="error">{errors.username}</p>}
+      </div>
 
-        <div className="form-group">
-          <label>Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
-          />
-          {errors.username && <p className="error">{errors.username}</p>}
-        </div>
+      <div className="form-group">
+        <label>Email</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {errors.email && <p className="error">{errors.email}</p>}
+      </div>
 
-        <div className="form-group">
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email"
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
-        </div>
+      <div className="form-group">
+        <label>Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {errors.password && <p className="error">{errors.password}</p>}
+      </div>
 
-        <div className="form-group">
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter password"
-          />
-          {errors.password && <p className="error">{errors.password}</p>}
-        </div>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+      <button type="submit">Register</button>
+    </form>
   );
 };
 
