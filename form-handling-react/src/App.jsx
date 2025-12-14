@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import RegistrationForm from './components/RegistrationForm'
+import FormikForm from './components/FormikForm'
 
 function App() {
 
 
   return (
     <>
-      <RegistrationForm />   
+      <RegistrationForm />  
+      <FormikForm />
     </>
   )
 }
